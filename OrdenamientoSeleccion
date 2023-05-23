@@ -1,31 +1,30 @@
-//ordenamiento por seleccion iterativo y recursivo
-public class Main
-{
-    
+
+class HelloWorld {
     public static int[] ordSeleccionIterativo (int a[]){
         
-        int menor=0;
+        int menor;
         
         for(int i=0; i<a.length-1;i++){
-            menor=i;
-            
-            for(int j=i+1; i<a.length;j++){
+             menor=i;
+             
+            for(int j=i+1; j<a.length;j++){
                 
                 if(a[j]<a[menor]){
                     menor=j;
                     int aux=a[i];
                     a[i]= a[menor];
                     a[menor]=aux;
-                }
+                   }
+                   
             }
         }
-        return a;
+       return a; 
         
     }
     
     public static int[] ordSeleccionRecursivo(int a[], int n){
         
-        int menor=0;
+        int menor;
         
         if(n==1)
             return a;
@@ -48,13 +47,24 @@ public class Main
          return a;
     }
     
-	public static void main(String[] args) {
-	    int entrada[] = {8,4,6,2};
+    public static void main(String[] args) {
+       int entrada[] = {8,4,6,2};
 	    
 	    int ordenado[]= ordSeleccionIterativo(entrada);
 	    
-	    for(int i=0; i<ordenado.length-1;i++){
+	    System.out.println("iterativo: ");
+	    
+	    for(int i=0; i<ordenado.length;i++){
 	        System.out.println(ordenado[i]);
 	    }
+	    
+	    System.out.println("recursivo: ");
+	    
+	    int recursivo[] = ordSeleccionRecursivo(entrada, entrada.length);
+	    
+	    for(int i=0; i<recursivo.length;i++){
+	        System.out.println(recursivo[i]);
+	    }
 	}
+    
 }
