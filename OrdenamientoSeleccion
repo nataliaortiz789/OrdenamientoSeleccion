@@ -1,4 +1,4 @@
-
+//ordenamiento seleccion iterativo y recursivo
 class HelloWorld {
     public static int[] ordSeleccionIterativo (int a[]){
         
